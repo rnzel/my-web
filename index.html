@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="styles.css">
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#" id="viewForm">
+			<img id="text" src="contract.jpg" alt="Contract Image" style="height: 120%;">
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="loginForm">
+			<img id="lock" src="lock.png" alt="Lock Icon" style="height: 20%;">
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Agreement Contract</h1>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hi, my favorite person!</h1>
+				<p>Please login to check our agreement.</p>
+				<div class="loginform">
+					<input id="username" type="text" placeholder="User" required />
+					<input id="password" type="password" placeholder="Password" required />
+					<p id="errorMessage" style="color: rgb(255, 255, 255); display: none; font-size: 10px;">Invalid login details. Please try again.</p>
+					<button type="button" class="ghost" id="signIn">View</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="script.js"></script>
