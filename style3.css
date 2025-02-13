@@ -1,226 +1,230 @@
+/* The Code that is on instagram post is of SCSS and this is CSS Code */
+
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fae1dd;
+  background-color: #ddd;
+  font-family: "Poiret One", Segoe UI Light, cursive;
+}
+
+#card {
+  position: absolute;
+  top: 100px;
+  width: 460px;
+  height: 260px;
+  left: 50%;
+  margin-left: -230px;
+}
+
+#card .heart {
+  width: 260px;
+  height: 260px;
+  float: left;
+}
+#card .heart #circle {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  background-color: #d32f2f;
+}
+#card .heart #rec,
+#card .heart #rec2 {
+  margin-top: -60px;
+  width: 130px;
+  height: 130px;
+  background-color: #d32f2f;
+  border-radius: 35% 0 0 0;
+}
+#card .heart #half2 {
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+  margin-top: -330px;
+  margin-left: -200px;
+}
+#card #heart2 {
+  margin-top: -60px;
+  margin-left: -130px;
+}
+#card #heart2 #circle,
+#card #heart2 #rec {
+  background-color: #fff;
+}
+#card #heart2 #half2 #rec {
+  border-bottom: 1px solid #eee;
+  margin-top: -61px;
+}
+#card #message {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-left: -130px;
+  background-color: #333;
+  border-radius: 35% 0 35% 0;
+  text-align: center;
+}
+#card #message h2 {
+  font-size: 20px;
+  color: #fff;
+  width: 160px;
+  margin-top: 60px;
+  margin-left: 16px;
+}
+#card #heart1 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-animation: closeLeft 2s ease-in-out forwards;
+  -moz-animation: closeLeft 2s ease-in-out forwards;
+  -ms-animation: closeLeft 2s ease-in-out forwards;
+  animation: closeLeft 2s ease-in-out forwards;
+}
+#card #heart2 {
+  -webkit-animation: closeRight 2s ease-in-out forwards;
+  -moz-animation: closeRight 2s ease-in-out forwards;
+  -ms-animation: closeRight 2s ease-in-out forwards;
+  animation: closeRight 2s ease-in-out forwards;
+}
+
+#card:hover #heart1 {
+  -webkit-animation: openLeft 2s ease-in-out forwards;
+  -moz-animation: openLeft 2s ease-in-out forwards;
+  -ms-animation: openLeft 2 ease-in-out forwards;
+  animation: openLeft 2s ease-in-out forwards;
+}
+#card:hover #heart2 {
+  -webkit-animation: openRight 2s ease-in-out forwards;
+  -moz-animation: openRight 2s ease-in-out forwards;
+  -ms-animation: openRight 2 ease-in-out forwards;
+}
+
+@-webkit-keyframes closeLeft {
+  from {
+    -webkit-transform: rotateY(0deg);
   }
-  
-  .container {
-    position: relative;
+  to {
+    -webkit-transform: rotateY(180deg);
   }
-  
-  .valentines {
-    position: relative;
-    top:50px;
-    cursor: pointer;
-    animation: up 3s linear infinite;
+}
+@-moz-keyframes closeLeft {
+  from {
+    -moz-transform: rotateY(0deg);
   }
-  
-  @keyframes up {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-30px);
-    }
+  to {
+    -moz-transform: rotateY(180deg);
   }
-  
-  
-  .envelope {
-    position: relative;
-    width: 300px;
-    height:200px;
-    background-color: #f08080; 
+}
+@-ms-keyframes closeLeft {
+  from {
+    -ms-transform: rotateY(0deg);
   }
-  
-  .envelope:before {
-    background-color: #f08080; 
-    content:"";
-    position: absolute;
-    width: 212px;
-    height: 212px;
-    transform: rotate(45deg);
-    top:-105px;
-    left:44px;
-    border-radius:30px 0 0 0;
+  to {
+    -ms-transform: rotateY(180deg);
   }
-  
-  .card {
-    position: absolute;
-    background-color: #eae2b7;
-    width: 270px;
-    height: 170px;
-    top:5px;
-    left:15px;
-    box-shadow: -5px -5px 100px rgba(0,0,0,0.4); 
+}
+@keyframes closeLeft {
+  from {
+    transform: rotateY(0deg);
   }
-  
-  .card:before {
-    content:"";
-    position: absolute;
-    border:3px solid #003049;
-    border-style: dotted;
-    width: 240px;
-    heighT: 140px;
-    left:12px;
-    top:12px;
+  to {
+    transform: rotateY(180deg);
   }
-  
-  .text {
-    position: absolute;
-    font-family: 'Brush Script MT', cursive;
-    font-size: 28px;
-    text-align: center;
-    line-height:25px;
-    top:19px;
-    left:85px;
-    color: #003049;
+}
+@-moz-keyframes openLeft {
+  from {
+    -moz-transform: rotateY(180deg);
   }
-  
-  .heart {
-    background-color: #d62828;
-    display: inline-block;
-    height: 30px;
-    margin: 0 10px;
-    position: relative;
-    top: 110px;
-    left:105px;
-    transform: rotate(-45deg);
-    width: 30px;
+  to {
+    -moz-transform: rotateY(0deg);
   }
-  
-  .heart:before,
-  .heart:after {
-    content: "";
-    background-color: #d62828;
-    border-radius: 50%;
-    height: 30px;
-    position: absolute;
-    width: 30px;
+}
+@-webkit-keyframes openLeft {
+  from {
+    -webkit-transform: rotateY(180deg);
   }
-  
-  .heart:before {
-    top: -15px;
-    left: 0;
+  to {
+    -webkit-transform: rotateY(0deg);
   }
-  
-  .heart:after {
-    left: 15px;
-    top: 0;
+}
+@-ms-keyframes openLeft {
+  from {
+    -ms-transform: rotateY(180deg);
   }
-  
-  .hearts {
-    position: absolute  
+  to {
+    -ms-transform: rotateY(0deg);
   }
-  
-  .one, .two, .three, .four, .five {
-    background-color: red;
-    display: inline-block;
-    height: 10px;
-    margin: 0 10px;
-    position: relative;
-    transform: rotate(-45deg);
-    width: 10px;
-    top:50px;
+}
+@keyframes openLeft {
+  from {
+    transform: rotateY(180deg);
   }
-  
-  .one:before,
-  .one:after, .two:before, .two:after, .three:before, .three:after, .four:before, .four:after, .five:before, .five:after {
-    content: "";
-    background-color: red;
-    border-radius: 50%;
-    height: 10px;
-    position: absolute;
-    width: 10px;
+  to {
+    transform: rotateY(0deg);
   }
-  
-  .one:before, .two:before, .three:before, .four:before, .five:before {
-    top: -5px;
-    left: 0;
+}
+@-moz-keyframes openRight {
+  0% {
+    -moz-transform: rotateX(180deg);
   }
-  
-  .one:after, .two:after, .three:after, .four:after, .five:after {
-    left: 5px;
-    top: 0;
+  100% {
+    -moz-transform: rotateX(0deg) rotateZ(180deg);
   }
-    
-  .one {
-    left:10px;
-    animation: heart 1s ease-out infinite; 
+}
+@-webkit-keyframes openRight {
+  0% {
+    -webkit-transform: rotateX(180deg);
   }
-  
-  .two {
-    left:30px;
-    animation: heart 2s ease-out infinite; 
+  100% {
+    -webkit-transform: rotateX(0deg) rotateZ(180deg);
   }
-  
-  .three {
-    left:50px;
-    animation: heart 1.5s ease-out infinite;
+}
+@-ms-keyframes openRight {
+  0% {
+    -ms-transform: rotateX(180deg);
   }
-  
-  .four {
-    left:70px;
-    animation: heart 2.3s ease-out infinite;
+  100% {
+    -ms-transform: rotateX(0deg) rotateZ(180deg);
   }
-  
-  .five {
-    left:90px;
-    animation: heart 1.7s ease-out infinite;
+}
+@keyframes openRight {
+  0% {
+    transform: rotateX(180deg);
   }
-  
-  @keyframes heart {
-    0%{
-      transform: translateY(0) rotate(-45deg) scale(0.3);
-      opacity: 1;
-    }
-    100%{
-      transform: translateY(-150px) rotate(-45deg) scale(1.3);
-      opacity: 0.5;
-    }
+  100% {
+    transform: rotateX(0deg) rotateZ(180deg);
   }
-  
-  .front {
-    position: absolute;
-    border-right: 180px solid #f4978e;
-    border-top: 95px solid transparent;
-    border-bottom: 100px solid transparent;
-    left:120px;
-    top:5px;
-    width:0;
-    height:0;
-    z-index:10;
+}
+@-webkit-keyframes closeRight {
+  from {
+    -webkit-transform: rotateX(0deg) rotate(180deg);
   }
-  
-  .front:before {
-    position: absolute;
-    content:"";
-    border-left: 300px solid #f8ad9d;
-    border-top: 195px solid transparent;
-    left:-120px;
-    top:-95px;
-    width:0;
-    height:0;
+  to {
+    -webkit-transform: rotateX(180deg);
   }
-  
-  .shadow {
-    position: absolute;
-    width: 330px;
-    height: 25px;
-    border-radius:50%;
-    background-color: rgba(0,0,0,0.3);
-    top:265px;
-    left:-15px;
-    animation: scale 3s linear infinite;
-    z-index:-1;
+}
+@-moz-keyframes closeRight {
+  from {
+    -moz-transform: rotateX(0deg) rotate(180deg);
   }
-  
-  @keyframes scale {
-    0%, 100% {
-      transform: scaleX(1);
-    }
-    50% {
-      transform: scaleX(0.85);
-    }
+  to {
+    -moz-transform: rotateX(180deg);
   }
+}
+@-ms-keyframes closeRight {
+  from {
+    -ms-transform: rotateX(0deg) rotate(180deg);
+  }
+  to {
+    -ms-transform: rotateX(180deg);
+  }
+}
+@keyframes closeRight {
+  from {
+    transform: rotateX(0deg) rotate(180deg);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
