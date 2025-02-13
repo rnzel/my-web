@@ -34,8 +34,8 @@ body {
 .card {
   position: absolute;
   background: white;
-  height: 25vmin;
-  width: 43vmin;
+  height: 30vmin;
+  width: 50vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
