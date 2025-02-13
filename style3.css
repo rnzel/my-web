@@ -1,230 +1,165 @@
-/* The Code that is on instagram post is of SCSS and this is CSS Code */
+* {
+  margin: 0;
+  padding: 0;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+h1 {
+  font-family: Solitreo;
+}
+
 body {
-  background-color: #ddd;
-  font-family: "Poiret One", Segoe UI Light, cursive;
+  height: 100vh;
+  width: 100vw;
+  background: #fee2e9;
+  font-family: "Pangolin", cursive;
+  font-size: 1vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#card {
+.container {
+  position: relative;
+  top: 0vmin;
+}
+
+.envelope {
+  position: relative;
+  background: #f980a1;
+  height: 30vmin;
+  width: 47.9vmin;
+}
+
+.card {
   position: absolute;
-  top: 100px;
-  width: 460px;
-  height: 260px;
-  left: 50%;
-  margin-left: -230px;
+  background: white;
+  height: 25vmin;
+  width: 43vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 2.5vmin;
+  top: 0vmin;
+  animation: slide-rev 0.2s ease-out;
 }
 
-#card .heart {
-  width: 260px;
-  height: 260px;
-  float: left;
+.message {
+  position: absolute;
+  top: 5vmin;
 }
-#card .heart #circle {
-  height: 130px;
-  width: 130px;
+
+.cover {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-bottom: 15vmin solid #fba7bd;
+  border-left: 24vmin solid transparent;
+  border-right: 24vmin solid transparent;
+  top: 15vmin;
+  z-index: 3;
+}
+
+.cover::after {
+  /*left triangle*/
+  position: absolute;
+  content: "";
+  border-left: 24.5vmin solid #fcbbcc;
+  border-bottom: 15vmin solid transparent;
+  border-top: 15vmin solid transparent;
+  top: -15vmin;
+  left: -24vmin;
+}
+
+.cover::before {
+  position: absolute;
+  content: "";
+  border-right: 24.5vmin solid #fcbbcc;
+  border-bottom: 15vmin solid transparent;
+  border-top: 15vmin solid transparent;
+  top: -15vmin;
+  left: -0.5vmin;
+}
+
+.lid {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 15vmin solid #f980a1;
+  border-left: 24vmin solid transparent;
+  border-right: 24vmin solid transparent;
+  top: 0;
+  transform-origin: top;
+  animation: open-rev 2s;
+}
+
+.container:hover .lid {
+  animation: open 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.container:hover .card {
+  animation: slide 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.shadow {
+  position: relative;
+  top: 3vmin;
   border-radius: 50%;
-  background-color: #d32f2f;
-}
-#card .heart #rec,
-#card .heart #rec2 {
-  margin-top: -60px;
-  width: 130px;
-  height: 130px;
-  background-color: #d32f2f;
-  border-radius: 35% 0 0 0;
-}
-#card .heart #half2 {
-  -ms-transform: rotate(-90deg);
-  /* IE 9 */
-  -webkit-transform: rotate(-90deg);
-  /* Chrome, Safari, Opera */
-  transform: rotate(-90deg);
-  margin-top: -330px;
-  margin-left: -200px;
-}
-#card #heart2 {
-  margin-top: -60px;
-  margin-left: -130px;
-}
-#card #heart2 #circle,
-#card #heart2 #rec {
-  background-color: #fff;
-}
-#card #heart2 #half2 #rec {
-  border-bottom: 1px solid #eee;
-  margin-top: -61px;
-}
-#card #message {
-  float: left;
-  width: 200px;
-  height: 200px;
-  margin-left: -130px;
-  background-color: #333;
-  border-radius: 35% 0 35% 0;
-  text-align: center;
-}
-#card #message h2 {
-  font-size: 20px;
-  color: #fff;
-  width: 160px;
-  margin-top: 60px;
-  margin-left: 16px;
-}
-#card #heart1 {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  -webkit-animation: closeLeft 2s ease-in-out forwards;
-  -moz-animation: closeLeft 2s ease-in-out forwards;
-  -ms-animation: closeLeft 2s ease-in-out forwards;
-  animation: closeLeft 2s ease-in-out forwards;
-}
-#card #heart2 {
-  -webkit-animation: closeRight 2s ease-in-out forwards;
-  -moz-animation: closeRight 2s ease-in-out forwards;
-  -ms-animation: closeRight 2s ease-in-out forwards;
-  animation: closeRight 2s ease-in-out forwards;
+  opacity: 0.7;
+  height: 2vmin;
+  width: 48vmin;
+  background: #e8c5d0;
 }
 
-#card:hover #heart1 {
-  -webkit-animation: openLeft 2s ease-in-out forwards;
-  -moz-animation: openLeft 2s ease-in-out forwards;
-  -ms-animation: openLeft 2 ease-in-out forwards;
-  animation: openLeft 2s ease-in-out forwards;
-}
-#card:hover #heart2 {
-  -webkit-animation: openRight 2s ease-in-out forwards;
-  -moz-animation: openRight 2s ease-in-out forwards;
-  -ms-animation: openRight 2 ease-in-out forwards;
+.heart {
+  position: relative;
+  width: 5vmin;
+  height: 4vmin;
+  top: 7vmin;
+  left: -1vmin;
 }
 
-@-webkit-keyframes closeLeft {
-  from {
-    -webkit-transform: rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateY(180deg);
-  }
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 2.5vmin;
+  top: 7vim;
+  width: 2.5vmin;
+  height: 4vmin;
+  background: #f40b4a;
+  border-radius: 2.5vmin 2.5vmin 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
 }
-@-moz-keyframes closeLeft {
-  from {
-    -moz-transform: rotateY(0deg);
-  }
-  to {
-    -moz-transform: rotateY(180deg);
-  }
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
-@-ms-keyframes closeLeft {
-  from {
-    -ms-transform: rotateY(0deg);
-  }
-  to {
-    -ms-transform: rotateY(180deg);
-  }
-}
-@keyframes closeLeft {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(180deg);
-  }
-}
-@-moz-keyframes openLeft {
-  from {
-    -moz-transform: rotateY(180deg);
-  }
-  to {
-    -moz-transform: rotateY(0deg);
-  }
-}
-@-webkit-keyframes openLeft {
-  from {
-    -webkit-transform: rotateY(180deg);
-  }
-  to {
-    -webkit-transform: rotateY(0deg);
-  }
-}
-@-ms-keyframes openLeft {
-  from {
-    -ms-transform: rotateY(180deg);
-  }
-  to {
-    -ms-transform: rotateY(0deg);
-  }
-}
-@keyframes openLeft {
-  from {
-    transform: rotateY(180deg);
-  }
-  to {
-    transform: rotateY(0deg);
-  }
-}
-@-moz-keyframes openRight {
-  0% {
-    -moz-transform: rotateX(180deg);
-  }
+
+@keyframes open {
   100% {
-    -moz-transform: rotateX(0deg) rotateZ(180deg);
+    transform: rotatex(180deg);
   }
 }
-@-webkit-keyframes openRight {
-  0% {
-    -webkit-transform: rotateX(180deg);
-  }
+@keyframes slide {
   100% {
-    -webkit-transform: rotateX(0deg) rotateZ(180deg);
+    transform: translatey(-15vmin);
+    z-index: 2;
   }
 }
-@-ms-keyframes openRight {
-  0% {
-    -ms-transform: rotateX(180deg);
-  }
-  100% {
-    -ms-transform: rotateX(0deg) rotateZ(180deg);
-  }
-}
-@keyframes openRight {
-  0% {
-    transform: rotateX(180deg);
-  }
-  100% {
-    transform: rotateX(0deg) rotateZ(180deg);
-  }
-}
-@-webkit-keyframes closeRight {
+@keyframes open-rev {
   from {
-    -webkit-transform: rotateX(0deg) rotate(180deg);
-  }
-  to {
-    -webkit-transform: rotateX(180deg);
+    transform: rotatex(-180deg);
   }
 }
-@-moz-keyframes closeRight {
+@keyframes slide-rev {
   from {
-    -moz-transform: rotateX(0deg) rotate(180deg);
-  }
-  to {
-    -moz-transform: rotateX(180deg);
-  }
-}
-@-ms-keyframes closeRight {
-  from {
-    -ms-transform: rotateX(0deg) rotate(180deg);
-  }
-  to {
-    -ms-transform: rotateX(180deg);
-  }
-}
-@keyframes closeRight {
-  from {
-    transform: rotateX(0deg) rotate(180deg);
-  }
-  to {
-    transform: rotateX(180deg);
+    transform: translatey(-15vmin);
   }
 }
