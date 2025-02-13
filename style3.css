@@ -5,6 +5,7 @@
 
 h1 {
   font-family: Solitreo;
+  font-size: 7px;
 }
 
 body {
@@ -162,4 +163,20 @@ body {
   from {
     transform: translatey(-15vmin);
   }
+}
+button {
+    display: block;
+    margin: 20px auto; /* Centers the button horizontally */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #e63950;
 }
